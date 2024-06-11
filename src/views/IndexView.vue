@@ -1,7 +1,7 @@
 <template>
   <div class="task-list">
     <div class="search-section">
-      <input type="text" v-model="searchQuery" @input="searchTasks" placeholder="Поиск" />
+      <input type="text" v-model="searchQuery" placeholder="Поиск" />
       <button-ui class="btn --primary custom" @click="openModal(undefined)">ДОБАВИТЬ ЗАДАЧУ</button-ui>
     </div>
     <ul>
@@ -62,9 +62,6 @@ const confirmDeleteTask = (taskId: string | number) => {
 
 const deleteTask = async (taskId: string | number) => {
   await taskStore.deleteTask(taskId);
-};
-
-const searchTasks = () => {
 };
 
 onMounted(() => {
